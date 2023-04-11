@@ -13,15 +13,16 @@ int main(int argc, char **argv)
 	int messageSize = 7;
 	char message[7];
 	LPCTSTR lpClassName = L"QWidget";
-	LPCTSTR lpWindowName = L"Самораспаковывающийся архив";
+	//Takes russian window name
+	LPCTSTR lpWindowName = L"Г‘Г Г¬Г®Г°Г Г±ГЇГ ГЄГ®ГўГ»ГўГ ГѕГ№ГЁГ©Г±Гї Г Г°ГµГЁГў";
 	RECT Rect;
 	HWND OK;
 	int startBruteForce = 0;
-	printf("Начать подбор пароля?\r\nВо время подбора пароля не совершайте никаких действий на компьютере\r\n(1 - начать, 0 - нет)\r\n");
+	printf("ГЌГ Г·Г ГІГј ГЇГ®Г¤ГЎГ®Г° ГЇГ Г°Г®Г«Гї?\r\nГ‚Г® ГўГ°ГҐГ¬Гї ГЇГ®Г¤ГЎГ®Г°Г  ГЇГ Г°Г®Г«Гї Г­ГҐ Г±Г®ГўГҐГ°ГёГ Г©ГІГҐ Г­ГЁГЄГ ГЄГЁГµ Г¤ГҐГ©Г±ГІГўГЁГ© Г­Г  ГЄГ®Г¬ГЇГјГѕГІГҐГ°ГҐ\r\n(1 - Г­Г Г·Г ГІГј, 0 - Г­ГҐГІ)\r\n");
 	scanf("%d", &startBruteForce);
 	if((startBruteForce != 0) && (startBruteForce != 1))
 	{
-		printf("Неверный вариант\r\n");
+		printf("ГЌГҐГўГҐГ°Г­Г»Г© ГўГ Г°ГЁГ Г­ГІ\r\n");
 		system("pause");
 		return -1;
 	}
@@ -35,7 +36,7 @@ int main(int argc, char **argv)
 	HWND hWnd = FindWindow(lpClassName, lpWindowName);
 	if(hWnd == NULL)
 	{
-		printf("Окно не найдено\r\n");
+		printf("ГЋГЄГ­Г® Г­ГҐ Г­Г Г©Г¤ГҐГ­Г®\r\n");
 		system("pause");
 		return -2;
 	}
@@ -47,7 +48,7 @@ int main(int argc, char **argv)
 	SetForegroundWindow(hWnd);
 	mouse_event(MOUSEEVENTF_LEFTDOWN, x, y, NULL, NULL);
 	mouse_event(MOUSEEVENTF_LEFTUP, x, y, NULL, NULL);
-	for(int L1 = '1'; L1 <= '9'; ++L1)//начать подбор с 1 (0 не принимает);
+	for(int L1 = '1'; L1 <= '9'; ++L1)//Г­Г Г·Г ГІГј ГЇГ®Г¤ГЎГ®Г° Г± 1 (0 Г­ГҐ ГЇГ°ГЁГ­ГЁГ¬Г ГҐГІ);
 	{
 		message[0] = L1;
 		for(int L2 = '0'; L2 <= '9'; ++L2)
@@ -81,7 +82,7 @@ int main(int argc, char **argv)
 								OK = FindWindow(lpClassName, L" ");
 								if(OK == NULL)
 								{
-									printf("Подбор завершен\r\n");
+									printf("ГЏГ®Г¤ГЎГ®Г° Г§Г ГўГҐГ°ГёГҐГ­\r\n");
 									return 0;
 								}
 								SendMessage(OK,WM_KEYDOWN, VK_RETURN, NULL);
@@ -98,6 +99,6 @@ int main(int argc, char **argv)
 			}
 		}
 	}
-	printf("Ни один из вариантов не подошел\r\n");
+	printf("ГЌГЁ Г®Г¤ГЁГ­ ГЁГ§ ГўГ Г°ГЁГ Г­ГІГ®Гў Г­ГҐ ГЇГ®Г¤Г®ГёГҐГ«\r\n");
 	return 0;
 }
