@@ -1,0 +1,44 @@
+.data_input
+{
+	size:60;
+}
+
+.data_inputs
+{	
+	border:3px solid black;
+	width:300px;
+	margin:auto;
+	padding: 10px;
+	background:ligthgrey;
+}
+
+#agreement_signed
+{
+	size:40px;
+}
+#policy_agreement
+{
+	border:3px solid #2468a2;
+	overflow-x: auto;
+	height:300px;
+	width:600px;
+	margin:auto;
+	margin-top:3px;
+	padding:20px;
+	background:white;
+}
+#main_content
+{
+	background:Lavender;
+	margin:auto;
+	width: 800px;
+	padding:20px;
+	padding-bottom:0px;
+}
+
+body
+{
+	background:Lavender;
+	font-family:arial, Helvetica, sans-sherif;
+	font-size:14;
+}
